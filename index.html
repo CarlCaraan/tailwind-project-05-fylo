@@ -20,6 +20,8 @@
         rel="stylesheet">
 
     <title>Fylo</title>
+
+
 </head>
 
 <body class="antialiased dark:bg-darkBlue dark:text-white font-opensans">
@@ -55,6 +57,24 @@
         </div>
     </header>
     <!-- ========== End Header Section ========== -->
+
+    <!-- ========== ALL SCRIPTS ========== -->
+    <!-- Main JS -->
+    <script src="dist/assets/js/script.js" defer></script>
+
+    <!-- Dark/Light Toggler Script -->
+    <script>
+        // https://www.freecodecamp.org/news/how-to-build-a-dark-mode-switcher-with-tailwind-css-and-flowbite
+        if (
+            localStorage.getItem('color-theme') === 'dark' ||
+            (!('color-theme' in localStorage) &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
 </body>
 
 </html>
